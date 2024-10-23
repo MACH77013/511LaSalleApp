@@ -24,8 +24,8 @@ fun MateriaDetalleScreen(innerPadding: PaddingValues, gradeId: Int, navControlle
             .fillMaxSize()
             .padding(innerPadding)
             .padding(16.dp)
-            .background(Color.White),
-        verticalArrangement = Arrangement.spacedBy(16.dp) // Espaciado vertical entre elementos
+            .background(Color(0xFFF0F4F8)), // Fondo color claro
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Text(
             text = "Detalles de la Materia",
@@ -36,7 +36,7 @@ fun MateriaDetalleScreen(innerPadding: PaddingValues, gradeId: Int, navControlle
         val materia = alumno.materias.find { it.id == gradeId }
 
         materia?.let {
-            val pesos = listOf(0.2, 0.3, 0.5) // Pesos para las calificaciones
+            val pesos = listOf(0.2, 0.3, 0.5)
             var totalPonderado = 0.0
             var totalPesos = 0.0
 
@@ -64,15 +64,23 @@ fun MateriaDetalleScreen(innerPadding: PaddingValues, gradeId: Int, navControlle
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text(text = "Calificación ${i + 1}", style = MaterialTheme.typography.bodyLarge)
-                        Text(text = "$calificacion", style = MaterialTheme.typography.bodyMedium)
-                    }
+                        Column(
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            Text(text = "Calificación ${i + 1}", style = MaterialTheme.typography.bodyLarge)
+                            Text(
+                                text = "$calificacion",
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
 
-                    Text(
-                        text = porcentaje,
-                        style = MaterialTheme.typography.bodySmall,
-                        modifier = Modifier.align(Alignment.BottomEnd)
-                    )
+                        Text(
+                            text = porcentaje,
+                            style = MaterialTheme.typography.bodySmall,
+                            modifier = Modifier.align(Alignment.Bottom)
+                        )
+                    }
                 }
             }
 
@@ -98,7 +106,7 @@ fun MateriaDetalleScreen(innerPadding: PaddingValues, gradeId: Int, navControlle
 
         Button(
             onClick = { navController.navigate("grades") },
-            modifier = Modifier.fillMaxWidth().padding(top = 16.dp) // Espaciado superior para el botón
+            modifier = Modifier.fillMaxWidth().padding(top = 16.dp)
         ) {
             Text("Volver a Calificaciones")
         }
