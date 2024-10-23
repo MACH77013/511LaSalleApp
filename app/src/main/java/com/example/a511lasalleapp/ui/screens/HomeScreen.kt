@@ -1,8 +1,7 @@
 package com.example.a511lasalleapp.ui.screens
 
 import android.util.Log
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,9 +19,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
@@ -140,7 +137,14 @@ fun HomeScreen(innerPadding: PaddingValues,navController: NavController) {
             ) {
                 Widget(icon = Icons.Default.DateRange, title = "Sin eventos")
                 Widget(icon = Task, title = "2 tareas")
-                Widget(icon = Cash, title = "Pagos")
+                Box(
+                    modifier = Modifier.clickable {
+                        navController.navigate("pagos")
+                    }
+                ){
+                    Widget(icon = Cash, title = "Pagos")
+
+                }
 
             }
         }

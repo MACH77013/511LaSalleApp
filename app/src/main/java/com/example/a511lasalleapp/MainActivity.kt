@@ -99,10 +99,13 @@ class MainActivity : ComponentActivity() {
                             HomeScreen(innerPadding = innerPadding, navController = navController)
                         }
                         composable(route = Screens.Grades.route) {
-                            GradesScreen(innerPadding = innerPadding)
+                            GradesScreen(innerPadding = innerPadding, navController = navController)
                         }
                         composable(route = Screens.Calendar.route) {
                             CalendarScreen(innerPadding = innerPadding)
+                        }
+                        composable(route = Screens.PagosScreen.route) {
+                            PagosScreen(innerPadding = innerPadding, navController = navController)
                         }
                         composable(route = Screens.Settings.route) {
                             SettingsScreen(innerPadding = innerPadding, navController = navController)
@@ -112,6 +115,17 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = Screens.ChangePasswordScreen.route) {
                             ChangePasswordScreen(innerPadding = innerPadding, navController = navController)
+                        }
+                        composable(
+                            route = Screens.MateriaDetalleScreen.route+"/{gradeId}",
+                            arguments = listOf(
+                                navArgument("gradeId") {
+                                    type = NavType.IntType
+                                }
+                            )
+                        ) {
+                            val gradeId = it.arguments?.getInt("gradeId") ?: 0
+                            MateriaDetalleScreen(innerPadding = innerPadding, gradeId = gradeId,navController =navController)
                         }
                         composable(
                             route = Screens.NewsDetail.route+"/{newsId}",

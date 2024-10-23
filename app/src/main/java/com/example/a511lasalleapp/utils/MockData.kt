@@ -1,9 +1,6 @@
 package com.example.a511lasalleapp.utils
 
-import com.example.a511lasalleapp.models.Community
-import com.example.a511lasalleapp.models.Materia
-import com.example.a511lasalleapp.models.News
-import com.example.a511lasalleapp.models.User
+import com.example.a511lasalleapp.models.*
 
 val newsList = listOf(
     News(
@@ -32,6 +29,20 @@ val communities = listOf(
     Community(3,"https://www.lasallebajio.edu.mx/comunidad/images/tile_cat_souv_22.jpg  "),
     Community(4,"https://www.lasallebajio.edu.mx/comunidad/images/tile_tramites.jpg"),
     Community(5,"https://www.lasallebajio.edu.mx/comunidad/images/tile_blog.jpg"),
+)
+val meses = listOf(
+    Mensualidad(1, "Enero", pagado = true),
+    Mensualidad(2, "Febrero", pagado = true),
+    Mensualidad(3, "Marzo", pagado = true),
+    Mensualidad(4, "Abril", pagado = true),
+    Mensualidad(5, "Mayo", pagado = true),
+    Mensualidad(6, "Junio", pagado = false),
+    Mensualidad(7, "Julio", pagado = false),
+    Mensualidad(8, "Agosto", pagado = false),
+    Mensualidad(9, "Septiembre", pagado = false),
+    Mensualidad(10, "Octubre", pagado = false),
+    Mensualidad(11, "Noviembre", pagado = false),
+    Mensualidad(12, "Diciembre", pagado = false)
 )
 
 val alumno = User(
