@@ -17,8 +17,8 @@ fun GradeDetalleScreen(innerPadding: PaddingValues, gradeId : Int, navController
     showSystemUi = true
 )
 @Composable
-fun GradesDetailPreview() {
+fun GradesDetailPreview(){
     _511LaSalleAppTheme {
         GradeDetalleScreen(innerPadding = PaddingValues(0.dp), gradeId = 1, navController = rememberNavController())
     }
-}
+    }
