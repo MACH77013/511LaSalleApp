@@ -30,9 +30,9 @@ fun PagosScreen(innerPadding: PaddingValues, navController: NavController) {
             .fillMaxWidth()
             .background(Color.White)
             .padding(vertical = 20.dp, horizontal = 16.dp)
-            .verticalScroll(scrollState), // Agrega padding general para toda la pantalla
+            .verticalScroll(scrollState),
     ) {
-        // Sección de pagos realizados
+
         Text(
             "PAGO DE COLEGIATURAS",
             modifier = Modifier
@@ -51,10 +51,10 @@ fun PagosScreen(innerPadding: PaddingValues, navController: NavController) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 4.dp) // Padding entre cada item
+                        .padding(vertical = 4.dp)
                         .clip(RoundedCornerShape(16.dp))
                         .background(Color(0xFFDEE2E6))
-                        .padding(12.dp) // Padding interno del item
+                        .padding(12.dp)
                 ) {
                     Row(
                         modifier = Modifier
@@ -68,11 +68,10 @@ fun PagosScreen(innerPadding: PaddingValues, navController: NavController) {
                             color = Color.Black
                         )
 
-                        // Selección de imagen según el estado pagado
                         val imageResource = if (mes.pagado) {
-                            R.drawable.bien // Imagen si está pagado
+                            R.drawable.bien
                         } else {
-                            R.drawable.mal // Imagen si no está pagado
+                            R.drawable.mal
                         }
 
                         Icon(
@@ -86,8 +85,7 @@ fun PagosScreen(innerPadding: PaddingValues, navController: NavController) {
             }
         }
 
-        // Sección de pagos no realizados
-        Spacer(modifier = Modifier.height(16.dp)) // Separación entre secciones
+        Spacer(modifier = Modifier.height(16.dp))
         Text(
             "NO PAGADO",
             modifier = Modifier
@@ -99,10 +97,10 @@ fun PagosScreen(innerPadding: PaddingValues, navController: NavController) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 4.dp) // Padding entre cada item
+                        .padding(vertical = 4.dp)
                         .clip(RoundedCornerShape(16.dp))
                         .background(Color(0xFFDEE2E6))
-                        .padding(12.dp) // Padding interno del item
+                        .padding(12.dp)
                 ) {
                     Row(
                         modifier = Modifier
@@ -116,11 +114,10 @@ fun PagosScreen(innerPadding: PaddingValues, navController: NavController) {
                             color = Color.Black
                         )
 
-                        // Selección de imagen según el estado pagado
                         val imageResource = if (mes.pagado) {
-                            R.drawable.bien // Imagen si está pagado
+                            R.drawable.bien
                         } else {
-                            R.drawable.mal // Imagen si no está pagado
+                            R.drawable.mal
                         }
 
                         Icon(

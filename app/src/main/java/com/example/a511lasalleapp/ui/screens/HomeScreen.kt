@@ -102,7 +102,7 @@ fun HomeScreen(innerPadding: PaddingValues,navController: NavController) {
                         fontSize = 18.sp
                     )
                     Text(
-                        text = "Juan Frausto",
+                        text = "Máximo Camacho",
                         color = MaterialTheme.colorScheme.onPrimary,
                         fontSize = 22.sp,
                         fontWeight = FontWeight.W900
