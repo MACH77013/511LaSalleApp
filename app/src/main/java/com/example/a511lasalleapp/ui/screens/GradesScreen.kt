@@ -1,3 +1,5 @@
+package com.example.a511lasalleapp.ui.screens
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -21,9 +23,14 @@ import coil.compose.AsyncImage
 import com.example.a511lasalleapp.ui.theme._511LaSalleAppTheme
 import com.example.a511lasalleapp.utils.Screens
 import com.example.a511lasalleapp.utils.alumno
+import com.example.a511lasalleapp.utils.calcularPromedio
 
 @Composable
 fun GradesScreen(innerPadding: PaddingValues, navController: NavController) {
+    alumno.materias.forEach { materia ->
+        materia.calcularPromedio()
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -98,8 +105,9 @@ fun GradesScreen(innerPadding: PaddingValues, navController: NavController) {
                             color = MaterialTheme.colorScheme.onSurface,
                             modifier = Modifier.padding(bottom = 8.dp)
                         )
+                        // Mostrar el promedio acumulado
                         Text(
-                            text = "Promedio Acumulado: ${materia.promedioAcumulado}",
+                            text = "Promedio Acumulado: ${String.format("%.2f", materia.promedioAcumulado)}",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )

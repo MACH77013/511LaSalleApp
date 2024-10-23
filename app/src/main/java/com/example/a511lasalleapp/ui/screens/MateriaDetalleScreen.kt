@@ -36,16 +36,16 @@ fun MateriaDetalleScreen(innerPadding: PaddingValues, gradeId: Int, navControlle
         val materia = alumno.materias.find { it.id == gradeId }
 
         materia?.let {
-            val pesos = listOf(0.2, 0.3, 0.5)
+            val pesos = listOf(0.3, 0.3, 0.4)
             var totalPonderado = 0.0
             var totalPesos = 0.0
 
             for (i in it.calificaciones.indices) {
                 val calificacion = it.calificaciones[i]
                 val porcentaje = when (i) {
-                    0 -> "20%"
+                    0 -> "30%"
                     1 -> "30%"
-                    2 -> "50%"
+                    2 -> "40%"
                     else -> "0%"
                 }
 

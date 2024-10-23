@@ -2,7 +2,7 @@ package com.example.a511lasalleapp
 
 import ChangePasswordScreen
 import ChangeTemaScreen
-import GradesScreen
+import com.example.a511lasalleapp.ui.screens.GradesScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
