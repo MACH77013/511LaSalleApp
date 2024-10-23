@@ -11,36 +11,26 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.a511lasalleapp.models.User
 import com.example.a511lasalleapp.ui.theme._511LaSalleAppTheme
 import com.example.a511lasalleapp.utils.alumno
 
 @Composable
-fun SettingsScreen(innerPadding : PaddingValues, navController: NavController) {
+fun ChangeTemaScreen(innerPadding : PaddingValues, navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize()
             .padding(innerPadding)
     ) {
-        Text(text = alumno.name)
+        Text(text = "Cambiar Tema")
+
         Box(modifier = Modifier
             .fillMaxWidth()
             .background(Color.Red)
             .clickable {
-                navController.navigate("changetheme")
+                navController.navigate("settings")
             }
         )
         {
-            Text(text = "CAMBIAR TEMA")
-        }
-        Box(modifier = Modifier
-            .fillMaxWidth()
-            .background(Color.Red)
-            .clickable {
-                navController.navigate("changepass")
-            }
-        )
-        {
-            Text(text = "CAMBIAR CONTRASEÑA")
+            Text(text = "volver")
         }
     }
 }
@@ -50,8 +40,8 @@ fun SettingsScreen(innerPadding : PaddingValues, navController: NavController) {
     showSystemUi = true
 )
 @Composable
-fun SettingsPreview(){
+fun ChangeTemaScreen(){
     _511LaSalleAppTheme{
-        SettingsScreen(innerPadding = PaddingValues(0.dp), navController = rememberNavController())
-        }
+        ChangeTemaScreen(innerPadding = PaddingValues(0.dp), navController = rememberNavController())
+    }
 }

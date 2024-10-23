@@ -35,11 +35,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.a511lasalleapp.models.BottomNavigationItem
-import com.example.a511lasalleapp.ui.screens.CalendarScreen
-import com.example.a511lasalleapp.ui.screens.GradesScreen
-import com.example.a511lasalleapp.ui.screens.HomeScreen
-import com.example.a511lasalleapp.ui.screens.NewsDetailScreen
-import com.example.a511lasalleapp.ui.screens.SettingsScreen
+import com.example.a511lasalleapp.ui.screens.*
 import com.example.a511lasalleapp.ui.theme._511LaSalleAppTheme
 import com.example.a511lasalleapp.utils.Screens
 import com.exyte.animatednavbar.AnimatedNavigationBar
@@ -109,7 +105,13 @@ class MainActivity : ComponentActivity() {
                             CalendarScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Settings.route) {
-                            SettingsScreen(innerPadding = innerPadding)
+                            SettingsScreen(innerPadding = innerPadding, navController = navController)
+                        }
+                        composable(route = Screens.ChangeTemaScreen.route) {
+                            ChangeTemaScreen(innerPadding = innerPadding, navController = navController)
+                        }
+                        composable(route = Screens.ChangePasswordScreen.route) {
+                            ChangePasswordScreen(innerPadding = innerPadding, navController = navController)
                         }
                         composable(
                             route = Screens.NewsDetail.route+"/{newsId}",
